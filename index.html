@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="./Tic_Tac_Toe.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⭕ Tic-Tac-Toe ❌</h1>
+            <p>Challenge yourself or a friend!</p>
+        </div>
+
+        <div class="mode-selection">
+            <button class="mode-btn active" onclick="game.setMode('pvp')">2 Players</button>
+            <button class="mode-btn" onclick="game.setMode('ai')">vs Computer</button>
+        </div>
+
+        <div class="difficulty-selection" id="difficultySelection">
+            <button class="difficulty-btn active" onclick="game.setDifficulty('easy')">Easy</button>
+            <button class="difficulty-btn" onclick="game.setDifficulty('medium')">Medium</button>
+            <button class="difficulty-btn" onclick="game.setDifficulty('hard')">Hard</button>
+            <button class="difficulty-btn" onclick="game.setDifficulty('impossible')">Impossible</button>
+        </div>
+
+        <div class="scoreboard">
+            <div class="score-item player-x">
+                <div class="score-label">Player X</div>
+                <div class="score-value" id="scoreX">0</div>
+            </div>
+            <div class="score-item ties">
+                <div class="score-label">Ties</div>
+                <div class="score-value" id="scoreTies">0</div>
+            </div>
+            <div class="score-item player-o">
+                <div class="score-label">Player O</div>
+                <div class="score-value" id="scoreO">0</div>
+            </div>
+        </div>
+
+        <div class="game-status" id="status">Player X's Turn</div>
+
+        <div class="thinking" id="thinking">AI is thinking...</div>
+
+        <div class="board" id="board">
+            <button class="cell" data-index="0"></button>
+            <button class="cell" data-index="1"></button>
+            <button class="cell" data-index="2"></button>
+            <button class="cell" data-index="3"></button>
+            <button class="cell" data-index="4"></button>
+            <button class="cell" data-index="5"></button>
+            <button class="cell" data-index="6"></button>
+            <button class="cell" data-index="7"></button>
+            <button class="cell" data-index="8"></button>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-reset" onclick="game.resetGame()">Reset Game</button>
+            <button class="btn btn-new-game" onclick="game.newGame()">New Game</button>
+            <button class="btn btn-clear-scores" onclick="game.clearScores()">Clear Scores</button>
+        </div>
+
+        <div class="game-info">
+            <p>Click on any empty cell to make your move</p>
+        </div>
+    </div>
+
+    <script src="./Tic_Tac_Toe.js"></script>
+</body>
+</html>
